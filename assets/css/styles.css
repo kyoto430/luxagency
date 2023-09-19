@@ -140,16 +140,9 @@ z-index: 2; */
   font-weight: 400;
 }
 
-.header__btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 235px;
-  height: 60px;
-  padding: 10px;
+/* .header__btn {
+
   border-radius: 20px;
-  border: 6px solid #000;
   cursor: pointer;
 }
 
@@ -170,6 +163,22 @@ z-index: 2; */
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+} */
+
+.radius {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gradient-border-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 235px;
+  height: 60px;
+  padding: 10px;
+  border: 10px solid;
+  border-image: linear-gradient(45deg, #F6E188, #A56A28, #E2AC54, #F2DA82, #BB772C, #EDA948) 1;
 }
 
 /* MAIN */
