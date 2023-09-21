@@ -10,13 +10,13 @@
 </head>
 
 <body>
-  <header class="header container-xl" id="header">
+  <header class="header container-xl">
     <div class="header__container container">
-      <a class="header__logo" href="#header"><span>LuxAgency</span></a>
+      <a class="header__logo" href="#main"><span>LuxAgency</span></a>
       <nav class="header__nav">
         <ul class="header__menu list-reset">
           <li class="menu__item">
-            <a class="menu__link link" href="#header">Главная</a>
+            <a class="menu__link link" href="#main">Главная</a>
           </li>
           <li class="menu__item">
             <a class="menu__link link" href="#company">О компании</a>
@@ -36,15 +36,13 @@
       <div class="menu__burger">
         <span></span>
       </div>
-      <div class="radius">
-        <div class="header__btn">
-          <span>Позвонить</span>
-        </div>
+      <div class="header__btn">
+        <span>Позвонить</span>
       </div>
     </div>
   </header>
   <main>
-    <section class="main">
+    <section class="main" id="main">
       <div class="main__background container-xl" style="background: #000 url('./assets/images/backgrounds/01.jpg');">
         <div class="main__container container">
           <h1 class="main__title">агентство недвижимости</h1>
@@ -105,42 +103,42 @@
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/7.jpg" alt="Витаминка" />
+            <img src="./assets/images/pics/team/7.jpg" alt="Витаминка">
             <div class="team__card-wrapper">
               <p class="team__card-title">Витаминка</p>
               <p class="team__card-subtitle">Маркетолог</p>
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/8.jpg" alt="Муслим" />
+            <img src="./assets/images/pics/team/8.jpg" alt="Муслим">
             <div class="team__card-wrapper">
               <p class="team__card-title">Муслим</p>
               <p class="team__card-subtitle">Программист</p>
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/9.jpg" alt="Антоноджи" />
+            <img src="./assets/images/pics/team/9.jpg" alt="Антоноджи">
             <div class="team__card-wrapper">
               <p class="team__card-title">Антоноджи</p>
               <p class="team__card-subtitle">Архитектор</p>
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/10.jpg" alt="Владик" />
+            <img src="./assets/images/pics/team/10.jpg" alt="Владик">
             <div class="team__card-wrapper">
               <p class="team__card-title">Владик</p>
               <p class="team__card-subtitle">Риэлтор</p>
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/11.jpg" alt="Андрюша" />
+            <img src="./assets/images/pics/team/11.jpg" alt="Андрюша">
             <div class="team__card-wrapper">
               <p class="team__card-title">Андрюша</p>
               <p class="team__card-subtitle">Специалист по рекламе</p>
             </div>
           </div>
           <div class="team__card">
-            <img src="./assets/images/pics/team/12.jpg" alt="Платина" />
+            <img src="./assets/images/pics/team/12.jpg" alt="Платина">
             <div class="team__card-wrapper">
               <p class="team__card-title">Платина</p>
               <p class="team__card-subtitle">Страховой агент</p>
@@ -149,7 +147,7 @@
         </div>
       </div>
     </section>
-    <section class="company container-xl">
+    <section class="company container-xl" id="company">
       <div class="container">
         <div class="title__wrapper">
           <h2 class="title">О компании</h2>
@@ -292,7 +290,7 @@
               <label class="calc__range-title" for="price-1">Сумма арендной платы</label>
               <input type="text" value="49 839" name="price" id="price-1">
             </div>
-            <input type="range" name="range" id="range-1" min="1" max="50000">
+            <input type="range" name="range" id="range-1" min="1" max="50000" value="49000">
           </div>
           <div class="calc__input-wrapper">
             <div class="calc__input-inner">
@@ -341,7 +339,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services container-xl" id="services">
       <div class="container">
         <div class="title__wrapper">
           <h2 class="title">Наши услуги</h2>
@@ -349,7 +347,17 @@
             готовы
             сделать ваш поиск максимально комфортными</p>
         </div>
+      </div>
+      <div class="container-xl">
         <div class="services__slider">
+          <div class="services__slider-nav">
+            <div class="btn-background">
+              <div class="slider__btn-prev"></div>
+            </div>
+            <div class="btn-background">
+              <div class="slider__btn-next"></div>
+            </div>
+          </div>
           <div class="services__slider-wrapper">
             <div class="services__slider-slide">
               <img src="./assets/images/pics/services/01.jpg" alt="Картинка 1">
@@ -382,23 +390,21 @@
               </ul>
             </div>
           </div>
-          <div class="services__slider-nav">
-            <div class="slider__btn-prev"></div>
-            <div class="slider__btn-next"></div>
-          </div>
         </div>
       </div>
     </section>
-    <section class="feedback">
+    <section class="feedback container-xl">
       <div class="container">
-        <div class="feedback__inner">
-          <h2 class="feedback__title">Нужна индивидуальная консультация?</h2>
-          <p class="feedback__subtitle">Оставьте телефон и мы перезвоним вам в течение 30 минут</p>
+        <div class="feedback__wrapper">
+          <div class="feedback__inner">
+            <h2 class="feedback__title">Нужна индивидуальная консультация?</h2>
+            <p class="feedback__subtitle">Оставьте телефон и мы перезвоним вам в течение 30 минут</p>
+          </div>
+          <input class="feedback__input" type="text" placeholder="Телефон">
         </div>
-        <input type="text" placeholder="Телефон">
       </div>
     </section>
-    <section class="projects">
+    <section class="projects container-xl" id="projects">
       <div class="container">
         <div class="title__wrapper">
           <h2 class="title">Наши проекты</h2>
@@ -411,7 +417,7 @@
               <p>Люкс апартаменты</p>
               <img src="./assets/images/pics/projects/01.jpg" alt="Люкс апартаменты">
             </div>
-            <div class="projects__slider-slide">
+            <div class="projects__slider-slide projects__slider-active">
               <p>Центральный офис</p>
               <img src="./assets/images/pics/projects/02.jpg" alt="Центральный офис">
             </div>
@@ -422,13 +428,13 @@
           </div>
           <div class="projects__slider-nav">
             <span>1</span>
-            <div></div>
+            <progress id="slide" max="3" value="1"></progress>
             <span>3</span>
           </div>
         </div>
       </div>
     </section>
-    <section class="calls">
+    <section class="calls container-xl" id="calls">
       <div class="container">
         <div class="title__wrapper">
           <h2 class="title">Отзывы</h2>
@@ -437,55 +443,55 @@
         <div class="calls__cards">
           <div class="calls__card">
             <div class="calls__card-inner">
-              <img src="./assets/images/pics/calls/01.png" alt="Владимир" />
-              <img src="./assets/images/icons/quote.svg" alt="icon quote" />
+              <img src="./assets/images/pics/calls/01.png" alt="Владимир">
+              <img src="./assets/images/icons/circle-quote.svg" alt="icon quote">
             </div>
             <p class="calls__card-text">Сотрудничество с агентством недвижимости было удивительным опытом! Их команда
               помогла мне найти мою мечтательную квартиру, и сделала все, чтобы сделка прошла гладко. Профессионализм и
               забота о клиентах на высшем уровне.
             </p>
             <div class="calls__card-rate">
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
             </div>
             <p class="calls__card-title">Владимир</p>
           </div>
           <div class="calls__card">
             <div class="calls__card-inner">
-              <img src="./assets/images/pics/calls/02.png" alt="Екатерина" />
-              <img src="./assets/images/icons/quote.svg" alt="icon quote" />
+              <img src="./assets/images/pics/calls/02.png" alt="Екатерина">
+              <img src="./assets/images/icons/circle-quote.svg" alt="icon quote">
             </div>
             <p class="calls__card-text">Я долго искала агентство недвижимости, которое могло бы продать мой дом быстро и
               по выгодной цене. С агентством, которое я выбрала, моя недвижимость была продана всего за несколько
               недель! Очень довольна результатом.
             </p>
             <div class="calls__card-rate">
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
             </div>
             <p class="calls__card-title">Екатерина</p>
           </div>
           <div class="calls__card">
             <div class="calls__card-inner">
-              <img src="./assets/images/pics/calls/03.png" alt="Антон" />
-              <img src="./assets/images/icons/quote.svg" alt="icon quote" />
+              <img src="./assets/images/pics/calls/03.png" alt="Антон">
+              <img src="./assets/images/icons/circle-quote.svg" alt="icon quote">
             </div>
             <p class="calls__card-text">Агентство недвижимости отлично управляет моими арендными объектами. Они всегда
               на связи, быстро реагируют на запросы арендаторов и обеспечивают стабильный доход от моих инвестиций.
               Рекомендую!
             </p>
             <div class="calls__card-rate">
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
-              <img src="./assets/images/icons/star.svg" alt="icon star" />
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
+              <img src="./assets/images/icons/star.svg" alt="icon star">
             </div>
             <p class="calls__card-title">Антон</p>
           </div>
@@ -493,11 +499,11 @@
       </div>
     </section>
   </main>
-  <footer class="footer" id="footer">
+  <footer class="footer container-xl" id="footer">
     <div class="footer__container container">
       <div class="footer__top">
-        <a class="header__logo" href="#header"><span>LuxAgency</span></a>
-        <h2>Преврати мечту в реальность</h2>
+        <a class="header__logo" href="#main"><span>LuxAgency</span></a>
+        <h2 class="footer__title">Преврати мечту в <span>реальность</span></h2>
         <div class="footer__socials">
           <a href="#">
             <img src="./assets/images/icons/vk.svg" alt="icon vk">
@@ -510,11 +516,12 @@
           </a>
         </div>
       </div>
+      <div class="line"></div>
       <div class="footer__bottom">
         <div class="footer__nav">
           <ul class="footer__menu list-reset">
             <li class="menu__item">
-              <a class="menu__link link" href="#header">Главная</a>
+              <a class="menu__link link" href="#main">Главная</a>
             </li>
             <li class="menu__item">
               <a class="menu__link link" href="#company">О компании</a>
@@ -545,7 +552,7 @@
               </address>
             </div>
           </div>
-          <button><span>Перейти в Telegram для обсуждения</span></button>
+          <button class="footer__btn"><span>Перейти в Telegram для обсуждения</span></button>
         </div>
       </div>
     </div>
