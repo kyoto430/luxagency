@@ -4,9 +4,6 @@
 
 /*========== font | colors | typography ==========*/
 
-:root {
-}
-
 /* base */
 
 body {
@@ -68,6 +65,90 @@ img {
 
 /* btns */
 
+@-webkit-keyframes blick {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+
+@keyframes blick {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(1vw);
+    opacity: 0;
+  }
+}
+
+.btn {
+  position: relative;
+}
+
+.btn:not(:disabled) .btn-blick {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.btn:not(:disabled) .btn-blick:after {
+  margin-left: -30px;
+  content: ' ';
+  width: 10px;
+  height: 300px;
+  box-shadow: 0px 0px 20px 10px #fff;
+  background: #fff;
+  -webkit-animation-delay: 0.05s;
+  animation-delay: 0.05s;
+  position: absolute;
+  left: -40px;
+  top: -150px;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-animation-name: blick;
+  animation-name: blick;
+  -webkit-animation-duration: 3.5s;
+  animation-duration: 3.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 /* wrapper */
 
 .container {
@@ -120,16 +201,24 @@ img {
   font-weight: 400;
 }
 
+.line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    #b0772a 0%,
+    #deb864 16%,
+    #f4d780 25%,
+    #f4d780 46%,
+    #fbf9d8 65%,
+    #f4d780 75%,
+    #b0772a 100%
+  );
+}
+
 /* header */
 
 .header {
-  /* position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  width: 100%;
-  padding: 22.5px 0px;
-  background: rgba(41, 44, 48, 0.27);
-  z-index: 100; */
   position: relative;
   width: 100%;
   padding: 30px 0px;
@@ -180,33 +269,6 @@ z-index: 2; */
   font-size: 20px;
   font-weight: 400;
 }
-
-/* .radius {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.header__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 235px;
-  height: 45px;
-  padding: 10px;
-  border: 6px solid;
-  border-image: linear-gradient(
-      45deg,
-      #f6e188,
-      #a56a28,
-      #e2ac54,
-      #f2da82,
-      #bb772c,
-      #eda948
-    )
-    1;
-  cursor: pointer;
-}
-} */
 
 .header__btn {
   --border-width: 0.375rem;
@@ -307,7 +369,8 @@ z-index: 2; */
 
 .main__background {
   position: relative;
-  height: 1014px;
+  height: 100vh;
+  max-height: 1014px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -338,6 +401,7 @@ z-index: 2; */
 
 .main__title {
   color: #fff;
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 70px;
   font-weight: 700;
@@ -347,6 +411,7 @@ z-index: 2; */
 .main__subtitle {
   margin-top: 35px;
   color: #fff;
+  text-align: center;
   font-family: 'Heebo', sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -717,12 +782,13 @@ z-index: 2; */
 }
 
 .rate__card {
-  width: 420px;
-  height: 716px;
+  max-width: 420px;
+  max-height: 716px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 92px 0px;
   border-radius: 10px;
   background: #000 url('../images/backgrounds/layout-6.png');
 }
@@ -1416,9 +1482,10 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .projects__slider-wrapper {
+  height: 653px;
   display: flex;
   justify-content: space-between;
-  height: 653px;
+  margin-top: 60px;
 }
 
 .projects__slider-slide {
@@ -1450,7 +1517,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .projects__slider-slide img {
   max-width: 360px;
-  height: 360px;
+  height: auto;
   border-radius: 9px;
 }
 
@@ -1460,7 +1527,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .projects__slider-active img {
   max-width: 462px;
-  height: 462px;
+  height: auto;
   border-radius: 12px;
 }
 
@@ -1650,7 +1717,6 @@ input[type='range']::-webkit-slider-thumb {
 
 .footer__socials {
   display: flex;
-  align-self: flex-start;
   gap: 20px;
 }
 
@@ -1743,17 +1809,740 @@ input[type='range']::-webkit-slider-thumb {
   letter-spacing: 0.48px;
 }
 
-.line {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    270deg,
-    #b0772a 0%,
-    #deb864 16%,
-    #f4d780 25%,
-    #f4d780 46%,
-    #fbf9d8 65%,
-    #f4d780 75%,
-    #b0772a 100%
-  );
+/* MEDIA */
+
+@media (max-width: 1359px) {
+  /* ALL */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 20px;
+  }
+
+  .title {
+    font-size: 45px;
+  }
+
+  .title__wrapper {
+    justify-content: space-between;
+  }
+
+  .team,
+  .company,
+  .why,
+  .rate,
+  .calc,
+  .services,
+  .feedback,
+  .projects,
+  .calls {
+    padding-top: 80px;
+  }
+
+  .team__cards,
+  .why__cards,
+  .rate__cards,
+  .calls__cards {
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  /* MAIN */
+  .main__title {
+    font-size: 60px;
+  }
+
+  .main__subtitle {
+    font-size: 30px;
+  }
+
+  /* COMPANY */
+  .company .title__wrapper {
+    gap: 80px;
+  }
+
+  /* CALC */
+  .calc__range-wrapper {
+    margin-top: 60px;
+  }
+
+  /* SERVICES */
+  .services .container .title__wrapper {
+    gap: 80px;
+  }
+
+  .services .container .title__wrapper .title {
+    max-width: 100%;
+  }
+
+  .services__slider {
+    margin-top: 60px;
+  }
+
+  .services__slider-nav {
+    margin-left: 50px;
+    margin-right: 25px;
+  }
+
+  /* PROJECTS */
+  .projects .container .title__wrapper {
+    gap: 80px;
+  }
+
+  .projects .container .title__wrapper .title {
+    max-width: 100%;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 1260px) {
+  /* ALL */
+  .title {
+    font-size: 40px;
+  }
+
+  .header__menu,
+  .footer__menu {
+    gap: 30px;
+  }
+
+  .team,
+  .company,
+  .why,
+  .rate,
+  .calc,
+  .services,
+  .feedback,
+  .projects,
+  .calls {
+    padding-top: 60px;
+  }
+
+  .team__cards,
+  .why__cards,
+  .rate__cards,
+  .calls__cards {
+    margin-top: 50px;
+  }
+
+  /* COMPANY */
+  .company .container .title__wrapper .description {
+    font-size: 28px;
+  }
+
+  .company__wrapper p:nth-child(1) {
+    margin-top: 18px;
+    margin-left: 25px;
+  }
+
+  .company__wrapper p:nth-child(2) {
+    margin-left: 25px;
+  }
+
+  .stat {
+    margin-left: 25px;
+  }
+
+  .stat__number {
+    font-size: 65px;
+  }
+
+  .stat__line {
+    width: 80px;
+  }
+
+  /* RATE */
+  .rate__card-title--1,
+  .rate__card-title--2,
+  .rate__card-title--3 {
+    font-size: 40px;
+  }
+
+  .rate__card-list li {
+    font-size: 15px;
+  }
+
+  /* CALC */
+  .calc__type-right {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  /* FEEDBACK */
+  .feedback__inner {
+    width: 60%;
+  }
+
+  /* PROJECTS */
+  .projects .container .title__wrapper {
+    gap: 20px;
+  }
+
+  .projects__slider-wrapper {
+    height: 500px;
+  }
+
+  .projects__slider-slide img {
+    max-width: 280px;
+  }
+
+  .projects__slider-active img {
+    max-width: 350px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 80px;
+  }
+
+  .footer__btn {
+    max-width: 350px;
+    padding: 3px 3px 3px 10px;
+  }
+
+  .footer__btn span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1075px) {
+  /* ALL */
+  .team,
+  .company,
+  .why,
+  .rate,
+  .calc,
+  .services,
+  .feedback,
+  .projects,
+  .calls {
+    padding-top: 50px;
+  }
+
+  .team__cards,
+  .why__cards,
+  .rate__cards,
+  .calls__cards {
+    margin-top: 40px;
+  }
+
+  /* MAIN */
+  .main__title {
+    font-size: 50px;
+  }
+
+  .main__subtitle {
+    font-size: 24px;
+  }
+
+  .main__btn {
+    margin-top: 60px;
+  }
+
+  /* TEAM */
+  .team__card-title {
+    font-size: 35px;
+  }
+
+  /* COMPANY */
+  .company .container .title__wrapper .description {
+    max-width: 600px;
+    font-size: 24px;
+  }
+
+  /* WHY */
+  .why .container .title__wrapper .description {
+    max-width: 600px;
+  }
+
+  /* RATE */
+  .rate__card-list li {
+    font-size: 14px;
+  }
+
+  /* PROJECTS */
+  .projects__slider-wrapper {
+    margin-top: 50px;
+  }
+
+  .projects__slider-nav {
+    margin-top: 20px;
+  }
+
+  /* CALLS */
+  .calls__card {
+    padding: 25px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 50px;
+  }
+
+  .footer__title {
+    font-size: 32px;
+  }
+
+  .footer__contacts-wrapper {
+    flex-direction: column;
+  }
+
+  .footer__contacts {
+    align-items: center;
+  }
+}
+
+@media (max-width: 1020px) {
+  /* ALL */
+  .team,
+  .company,
+  .why,
+  .rate,
+  .calc,
+  .services,
+  .feedback,
+  .projects,
+  .calls {
+    padding-top: 40px;
+  }
+
+  .team__cards,
+  .why__cards,
+  .rate__cards,
+  .calls__cards {
+    margin-top: 20px;
+  }
+
+  .team__cards {
+    row-gap: 20px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .title::after {
+    margin: 20px auto auto auto;
+  }
+
+  .title__wrapper,
+  .company .title__wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* MAIN */
+  .main__title {
+    font-size: 45px;
+  }
+
+  /* TEAM */
+  .team .container .title__wrapper .title,
+  .rate .container .title__wrapper .title,
+  .calc .container .title__wrapper .title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .team .container .title__wrapper .description {
+    text-align: center;
+  }
+
+  /* COMPANY */
+
+  .company .container .title__wrapper .description,
+  .why .container .title__wrapper .description,
+  .rate .container .title__wrapper .description,
+  .calc .container .title__wrapper .description,
+  .services .container .title__wrapper .description,
+  .projects .container .title__wrapper .description,
+  .calls .container .title__wrapper .description {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .company__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .company__wrapper p:nth-child(1) {
+    max-width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .company__wrapper p:nth-child(2) {
+    max-width: 100%;
+    margin-left: 0px;
+  }
+
+  .company__wrapper {
+    text-align: center;
+  }
+
+  .stat {
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  /* WHY */
+  .why .title__wrapper,
+  .services .container .title__wrapper {
+    gap: 20px;
+  }
+
+  /* RATE */
+  .rate__cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rate__card {
+    padding: 48px 0px;
+  }
+
+  .rate__card-list {
+    margin-top: 35px;
+  }
+
+  .rate__card-btn--1,
+  .rate__card-btn--2,
+  .rate__card-btn--3 {
+    margin-top: 50px;
+  }
+
+  /* CALC */
+  .calc__range-wrapper {
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 40px;
+  }
+
+  .calc__input-inner input {
+    max-width: 300px;
+  }
+
+  .calc__type-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .calc__type-right {
+    margin-top: 40px;
+  }
+
+  /* SERVICES */
+  .services__slider {
+    margin-top: 40px;
+  }
+
+  /* FEEDBACK */
+  .feedback__wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 25px;
+  }
+
+  .feedback__inner {
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .feedback__input {
+    width: 50%;
+  }
+
+  .feedback__title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .feedback__subtitle {
+    text-align: center;
+  }
+
+  /* PROJECTS */
+  .projects__slider-wrapper {
+    margin-top: 20px;
+  }
+
+  .projects__slider-slide img {
+    max-width: 180px;
+  }
+
+  .projects__slider-active img {
+    max-width: 280px;
+  }
+
+  /* CALLS */
+  .calls .container .title__wrapper {
+    gap: 20px;
+  }
+
+  .calls__cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer__container {
+    gap: 20px;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__bottom {
+    gap: 20px;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer__contacts-wrapper {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* ALL */
+  .container {
+    padding: 0px 10px;
+  }
+
+  /* PROJECTS */
+  .projects__slider-wrapper {
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .projects__slider-slide {
+    align-items: center;
+  }
+
+  .projects__slider-slide p {
+    text-align: center;
+  }
+
+  .projects__slider-slide img {
+    max-width: 220px;
+  }
+
+  .projects__slider-active img {
+    max-width: 320px;
+  }
+
+  /* FEEDBACK */
+  .feedback__input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 560px) {
+  /* ALL */
+  .team,
+  .company,
+  .why,
+  .rate,
+  .calc,
+  .services,
+  .feedback,
+  .projects,
+  .calls {
+    padding-top: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  /* MAIN */
+  .main__title {
+    font-size: 25px;
+  }
+
+  .main__subtitle {
+    font-size: 18px;
+  }
+
+  .main__btn {
+    max-width: 280px;
+  }
+
+  .main__btn span {
+    font-size: 14px;
+  }
+
+  /* TEAM */
+  .team__card-title {
+    font-size: 30px;
+  }
+
+  /* COMAPNY */
+  .stat {
+    flex-direction: column;
+  }
+
+  .stat__number {
+    font-size: 56px;
+  }
+  .stat__line {
+    transform: rotate(0deg);
+  }
+
+  /* WHY */
+  .why__card {
+    height: auto;
+  }
+
+  /* RATE */
+  .rate__card {
+    width: 100%;
+    padding: 28px 0px;
+  }
+
+  .rate__card-title--1,
+  .rate__card-title--2,
+  .rate__card-title--3 {
+    font-size: 30px;
+  }
+
+  .rate__card-btn--1,
+  .rate__card-btn--2,
+  .rate__card-btn--3 {
+    max-width: 250px;
+  }
+
+  .rate__card-list {
+    margin-top: 20px;
+  }
+
+  .rate__card-list {
+    gap: 10px;
+  }
+
+  /* CALC */
+  .calc__input-inner {
+    flex-direction: column;
+  }
+
+  .calc__range-wrapper {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .calc__type-card > img {
+    max-width: 100%;
+  }
+
+  .calc__type-btn {
+    width: 100%;
+  }
+
+  .calc__type-btn span {
+    font-size: 14px;
+  }
+
+  .calc__type-badge {
+    padding: 10px;
+  }
+
+  .calc__type-badge p:nth-child(1) {
+    text-align: center;
+  }
+
+  .calc__type-badge p:nth-child(2) {
+    font-size: 30px;
+  }
+
+  /* SERVICES */
+  .services__slider {
+    flex-direction: column-reverse;
+  }
+
+  .services__slider-nav {
+    flex-direction: row;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .services__slider-slide img {
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .services__slider-list {
+    margin-left: 0px;
+  }
+
+  .services__slider-slide {
+    width: 100%;
+    max-width: 375px;
+    min-width: 280px;
+  }
+
+  /* FEEDBACK */
+  .feedback__title {
+    font-size: 24px;
+  }
+
+  .feedback__subtitle {
+    font-size: 16px;
+  }
+
+  .feedback__wrapper {
+    padding: 20px;
+  }
+
+  .feedback__input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  /* TEAM */
+  .team__card img {
+    max-width: 280px;
+  }
+
+  /* SERVICES */
+  .services__slider-slide {
+    width: 280px;
+  }
 }
