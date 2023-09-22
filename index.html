@@ -32,14 +32,14 @@
             <a class="menu__link link" href="#calls">Отзывы</a>
           </li>
         </ul>
+        <div class="btn header__btn">
+          <div class="btn-blick"></div>
+          <span>Позвонить</span>
+        </div>
       </nav>
       <div class="overlay"></div>
       <div class="menu__burger">
         <span></span>
-      </div>
-      <div class="btn header__btn">
-        <div class="btn-blick"></div>
-        <span>Позвонить</span>
       </div>
     </div>
   </header>
@@ -305,21 +305,33 @@
               <label class="calc__range-title" for="price-1">Сумма арендной платы</label>
               <input type="text" value="49 839" name="price" id="price-1">
             </div>
-            <input type="range" name="range" id="range-1" min="1" max="50000" value="49000">
+            <div class="calc__slider">
+              <div class="box-line">
+                <div class="box-line__progress"></div>
+              </div>
+            </div>
           </div>
           <div class="calc__input-wrapper">
             <div class="calc__input-inner">
               <label class="calc__range-title" for="price-2">Операционные расходы</label>
               <input type="text" value="8 000" name="price" id="price-2">
             </div>
-            <input type="range" name="range" id="range-2" min="1" max="10000">
+            <div class="calc__slider">
+              <div class="box-line">
+                <div class="box-line__progress"></div>
+              </div>
+            </div>
           </div>
           <div class="calc__input-wrapper">
             <div class="calc__input-inner">
               <label class="calc__range-title" for="price-3">Заемные средства</label>
               <input type="text" value="7 594 042" name="price" id="price-3">
             </div>
-            <input type="range" name="range" id="range-3" min="1" max="1000000">
+            <div class="calc__slider">
+              <div class="box-line">
+                <div class="box-line__progress"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="calc__type-wrapper">
@@ -438,6 +450,8 @@
             <div class="projects__slider-slide projects__slider-active">
               <p>Центральный офис</p>
               <img src="./assets/images/pics/projects/02.jpg" alt="Центральный офис">
+              <img src="./assets/images/backgrounds/layout-5.png" alt="bg" />
+              <img src="./assets/images/backgrounds/layout-5.png" alt="bg" />
             </div>
             <div class="projects__slider-slide">
               <p>Бизнес центр</p>
